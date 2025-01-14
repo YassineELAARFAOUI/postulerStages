@@ -9,8 +9,8 @@ import time
 import random
 
 # ===== USER CONFIGURATION =====
-SENDER_EMAIL = "elaarfaoui.yassine2@gmail.com"  # Your Gmail address
-APP_PASSWORD = "mdys ydda setk dqww"  # Your Gmail App Password (NOT your regular password , to generate one, look at the end of this file :) )
+SENDER_EMAIL = ""  # Your Gmail address
+APP_PASSWORD = ""  # Your Gmail App Password (NOT your regular password , to generate one, look at the end of this file :) )
 
 # Email Content Configuration
 SUBJECT = "Candidature Stage PFE(Full-Stack Web Developer)"
@@ -22,20 +22,25 @@ SENDER_PHONE = "+212616712409"  # Your phone number
 EMAIL_BODY = f"""
 <html>
 <body>
-<h2>Object : Follow-Up on Interview Rescheduling Opportunity</h2>
-<p>Hello Mr. Elmehdi,</p>
-<p>I hope you're doing well. I'm writing to remind you that you kindly offered me the opportunity to redo the interview after a month to improve my English. I have been working to make progress, and I would be grateful for the chance to have this interview with you in hopes of securing the internship.</p>
-<p>Thank you in advance for your attention and support.</p>
-<p>Best regards,<br> Yassine ELAARFAOUI</p>
+<h2>Demande de stage PFE en développement full stack et cloud computing</h2>
+<p>Bonjour,</p>
+<p>J'espère que vous allez bien.</p>
+<p>Je suis actuellement à la recherche d'un stage de PFE en développement full stack et cloud computing, et je me permets de vous contacter à ce sujet.</p>
+<p>Pourriez-vous me dire s'il y a des offres ouvertes chez vous ou si vous pouvez me recommander d'autres personnes à contacter ?</p>
+<p>Je vous remercie pour votre temps et votre considération. J'espère avoir bientôt l'occasion d'échanger avec vous.</p>
+<p>Cordialement,<br> Yassine ELAARFAOUI<br> +212616712409</p>
+<p>Disponibilité : 6 mois<br>Début : Février</p>
+</body>
 </html>
 """
 
+
 # Sending Configuration
-EMAILS_PER_BATCH = 70  # Number of emails to send in each batch
-BATCH_DELAY_MIN = 181  # Minimum delay between batches (in seconds)
-BATCH_DELAY_MAX = 230  # Maximum delay between batches (in seconds)
-EMAIL_DELAY_MIN = 3  # Minimum delay between individual emails (in seconds)
-EMAIL_DELAY_MAX = 5  # Maximum delay between individual emails (in seconds)
+EMAILS_PER_BATCH = 72  # Number of emails to send in each batch
+BATCH_DELAY_MIN = 20  # Minimum delay between batches (in seconds)
+BATCH_DELAY_MAX =30  # Maximum delay between batches (in seconds)
+EMAIL_DELAY_MIN = 1  # Minimum delay between individual emails (in seconds)
+EMAIL_DELAY_MAX = 1  # Maximum delay between individual emails (in seconds)
 
 def send_email(subject, body, to_email, pdf_file, smtp_session):
     """
@@ -79,7 +84,9 @@ def process_email_list(email_string):
 
 def main():
     # List of recipient emails (replace with your target emails)
-    email_string = "el.mehdi.sekkouri.alaoui@oracle.com,el.mehdi.sekkouri.alaoui@oracle.com,el.mehdi.sekkouri.alaoui@oracle.com,el.mehdi.sekkouri.alaoui@oracle.com,el.mehdi.sekkouri.alaoui@oracle.com,el.mehdi.sekkouri.alaoui@oracle.com,el.mehdi.sekkouri.alaoui@oracle.com,el.mehdi.sekkouri.alaoui@oracle.com,el.mehdi.sekkouri.alaoui@oracle.com,el.mehdi.sekkouri.alaoui@oracle.com,el.mehdi.sekkouri.alaoui@oracle.com,el.mehdi.sekkouri.alaoui@oracle.com"
+    email_string = "msenhaji@lear.com, sennaciri@lear.com, ssila@lear.com, contactrecrutement@axa-services.ma, fz.hermani@gmail.com, hilal.mariem@gmail.com, assid.houbane@gmail.com, saraibenmoussa@gmail.com, widad.idrissi@hotmail.com, ad.idrissi@gmail.com, ielmaki.ikram@gmail.com, sighidi@centralelaitiere.com, issam.ihsane@gmail.com, ijaouharaten@gmail.com, live_your-life@hotmail.fr, mohedimloul@gmail.com, sb@recrute-it.com, k.jababdi@uniforce.ma, jad.recrutement@gmail.com, sjabri96@hotmail.com, n_jahri@yahoo.fr, c.jutard@kiabi.com, radouan.khallouki@gefco.ma, kabbadj@cih.co.ma, kalbi.ahlam@gmail.com, h.kamil@tmsa.ma, recrutement@cosumar.co.ma, yousra.guedira@devoteam.com, fanny.gerer@gmail.com, nathaliegeschwind@yahoo.fr, casus_ali@msn.com, s.genereux@hotmail.fr, basma.ghafir@yahoo.fr, alaoui.ismaili.g1@gmail.com, wafaa.ghaimy@gmail.com, Faycal.Ghandri@gmail.com, chehin.gharsallah@oxia-group.com, ghennami212@gmail.com, kguergachi@gmail.com, cguillaneuf@les-menus-services.com, hraouia_amal@yahoo.fr, najlaa.hachami@hotmail.fr, majdaelhaddioui@hotmail.com, hallaouihala@yahoo.fr, lelhammar@gmail.com, siham1_ma@yahoo.fr, lamya.hadji@axa.ma, hajoujiidrissi.fz@gmail.com, mustaphahamdani@hotmail.fr, bahiya.hanoun@gmail.com, halima_hantoum@ymail.com, rharis@snop.fr, btissam.bergannou@econocom.fr, contact@nemotektechnologies.com, cid@did.co.ma, recrutement@sofrecom.ma, Sofia.ettahir@genpact.com, a.fatmi@mu-b-solution.com, s.oujdi@mascir.com, rhmaroc@cegedin-active.com, yousra.guedira@devoteam.com, yousra.rahmani@devoteam.com, jala.kemouch@hp.com, stage.maroc@logica.com, recrutement@obisol.com, rh.marocco.recrutement@alyotech.fr, Fatima_bouarchouk@mentor.com, serouaji@indracompany.com, contact@percail-developpement.com, Sarpdoil_maroc@yahoo.fr, recrutement@axa-services.ma"
+
+
     to_list = process_email_list(email_string)
 
     # Establish SMTP connection
